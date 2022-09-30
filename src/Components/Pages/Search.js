@@ -21,7 +21,7 @@ const SearchPage = () => {
         </div>) : (
         search.length > 0 ? (
           search.map((s) => (
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-4" key={s.id}>
               <Link to={`/details/${s.id}/${s.media_type}`}
                 style={{ textDecoration: "none"}}
               >

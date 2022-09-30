@@ -21,7 +21,7 @@ const Cast = ({ id,type }) => {
         <>
           
             {casts.map((cast) => (
-                <div className="col-6 col-md-2 py-3">
+                <div className="col-6 col-md-2 py-3" key={cast.id}>
                     <img src={`https://www.themoviedb.org/t/p/w138_and_h175_face${cast.profile_path}`} style={{borderRadius: '7px'}}  alt="" />
                     <p>{cast.original_name}</p> as <p>{cast.character}</p>
                 </div>

@@ -7,6 +7,7 @@ import Tv from './Components/Pages/Tv';
 import Reviews from './Components/Pages/Reviews';
 import SearchPage from './Components/Pages/Search';
 import NotFound from './Components/Pages/NotFound';
+import Videos from './Components/Pages/Videos';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/reviews/:id/:type">
             <Reviews />
+          </Route>
+          <Route path="/videos/:id/:type">
+            <Videos />
           </Route>
           <Route path="/search/:query">
             <SearchPage />

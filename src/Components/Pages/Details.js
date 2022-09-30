@@ -12,9 +12,10 @@ const Details = ({title}) => {
   const { details, fetching} = useDetails(`https://api.themoviedb.org/3/${type}/${id}?api_key=5e75cbabb35cdb37b81c1b89c24e4463&language=en-US`)
   const {details: similar} = useDetails(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=5e75cbabb35cdb37b81c1b89c24e4463&language=en-US&page=1`)
 
+
+
   return (
     <div className="movie-details bg-dark text-white">
-      
 
       <div className="content"  style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://image.tmdb.org/t/p/original${details.backdrop_path})`, backgroundSize: 'cover', backgroundPosition: 'cnenter'}}>
 
@@ -44,19 +45,19 @@ const Details = ({title}) => {
                  
                   
                   <p className="lead">{details.overview}</p>
-                  <button className="btn btn-danger">Trailer</button> &nbsp;
+                  <Link to={`/videos/${details.id}/${type}`}>  <button className="btn btn-danger">Trailer</button></Link> &nbsp;
                 <Link to={`/reviews/${details.id}/${type}`}>  <button className="btn btn-dark">Read Reviews</button></Link>
                   <div className="row mt-4">
                     <div className="col-6">
                     <p className="lead">Genres</p>
                       {details.genres.map((genres) => (
-                          <p>{genres.name}</p>
+                          <p key={genres.id}>{genres.name}</p>
                       ))}
                     </div>
                     <div className="col-6">
                     <p className="lead">Production Companies</p>
-                      {details.production_companies.map((genres) => (
-                          <p>{genres.name}</p>
+                      {details.production_companies.map((p) => (
+                          <p key={p.id}>{p.name}</p>
                       ))}
                     </div>
                   </div>
@@ -71,6 +72,8 @@ const Details = ({title}) => {
       </div>
       <Container>
         <div className="row my-5">
+     
+
           <div className="display-6 text-center">
                   Cast/Crew
           </div>
