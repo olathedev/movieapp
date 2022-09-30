@@ -14,7 +14,7 @@ const Videos = () => {
             {!pending ? (
                 trailer.map((tt)=>(
                     <div className="col-12 col-md-6" key={tt.id}>
-                           <iframe title={tt.name} height="345" src={`https://www.youtube.com/embed/${tt.key}`}></iframe>
+                           <iframe title={tt.name} height="500" width="100%" src={`https://www.youtube.com/embed/${tt.key}`}></iframe>
                            <p className="lead">{tt.type}</p>
                     </div>
                 ))
@@ -22,6 +22,7 @@ const Videos = () => {
                 <div>Loading...</div>
             )}
             </div>
+            <br /><br /><br /><br /><br /><br /><br />
         </div>
      );
 }
