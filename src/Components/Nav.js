@@ -13,14 +13,14 @@ function HomeNav({ title, toggle, toggledark }) {
           <Nav className="me-auto">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/tv" className="nav-link">Tv Series</Link>
-            <Nav.Link href="#features">Popular</Nav.Link>
+            {/* <Nav.Link href="#features">Popular</Nav.Link>
             <Nav.Link href="#pricing">Tv Series</Nav.Link>
             <Nav.Link href="#features">Movies</Nav.Link>
             <Nav.Link href="#pricing">Comics</Nav.Link>
             <Nav.Link href="#features">Trending</Nav.Link>
             <Nav.Link href="#pricing">People</Nav.Link>
             <Nav.Link href="#features">Trailers</Nav.Link>
-            <Nav.Link href="#pricing">Reviews</Nav.Link>
+            <Nav.Link href="#pricing">Reviews</Nav.Link> */}
             {/* <NavDropdown title="Categories" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action Movies</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
