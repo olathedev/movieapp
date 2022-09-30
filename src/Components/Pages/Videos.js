@@ -14,7 +14,7 @@ const Videos = () => {
             {!pending ? (
                 trailer.map((tt)=>(
                     <div className="col-12 col-md-6" key={tt.id}>
-                           <iframe title={tt.name} height="345" src={`https://www.youtube.com/embed/${tt.key}&loop=1`}></iframe>
+                           <iframe title={tt.name} height="345" src={`https://www.youtube.com/embed/${tt.key}`}></iframe>
                            <p className="lead">{tt.type}</p>
                     </div>
                 ))
