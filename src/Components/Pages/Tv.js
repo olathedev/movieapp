@@ -7,6 +7,12 @@ const Tv = () => {
     const {data: tv, pending} = useFetch('https://api.themoviedb.org/3/tv/top_rated?api_key=5e75cbabb35cdb37b81c1b89c24e4463&language=en-US&page=1')
 
     return ( 
+        <div>
+            <div className="tv-header container py-5">
+                
+                <h1>Latest tv show : </h1>
+                <p className="lead"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam odio et quam placeat repudiandae olor? </p>
+            </div>
         <div className="latest container">
             <hr />
             <div className="display-5 text-center py-4">Explore tv shows</div>
@@ -33,6 +39,7 @@ const Tv = () => {
                 <div>Loading...</div>
             )}
             </div>
+        </div>
         </div>
      );
 }

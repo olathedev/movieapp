@@ -1,5 +1,7 @@
 import Home from './Components/Pages/Home';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import HomeNav from './Components/Nav';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Details from './Components/Pages/Details';

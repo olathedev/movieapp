@@ -4,14 +4,64 @@ import { Container } from "react-bootstrap";
 import useDetails from "../Customhook/useDetails";
 import Cast from "./Cast";
 import { Link } from "react-router-dom";
+import React from "react";
+import Slider from "react-slick";
 
 const Details = ({title}) => {
   
+
   const { id, type } = useParams();
 
   const { details, fetching} = useDetails(`https://api.themoviedb.org/3/${type}/${id}?api_key=5e75cbabb35cdb37b81c1b89c24e4463&language=en-US`)
   const {details: similar} = useDetails(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=5e75cbabb35cdb37b81c1b89c24e4463&language=en-US&page=1`)
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 5,
+    autoplay: true,
+ 
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          autoplay: true,
+          infinite: true,
+          speed: 2000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          dots: true,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 2000,
+          cssEase: "linear"
+        }
+      }
+    ]
+  }
 
 
   return (
@@ -73,13 +123,26 @@ const Details = ({title}) => {
       <Container>
         <div className="row my-5">
      
-
+                        {!fetching ? (
+                          type === 'tv' && (
+                          details.seasons.map((season)=>(
+                            <div className="col-6 col-md-3 col-lg-2" key={season.id}>
+                              <img src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${season.poster_path}`} style={{borderRadius: '10px'}} alt="" />
+                              <p>{season.name} episodes - {season.episode_count}</p>
+                              <p></p>
+                              
+                            </div>
+                          ))
+                        )) : (
+                          <div>Loading</div>
+                        )}
           <div className="display-6 text-center">
                   Cast/Crew
           </div>
                  <hr />
-              <Cast id={id} type={type} />
-           
+                 
+              <Cast id={id} type={type} settings={settings} />
+            
               
             </div>
 

@@ -5,7 +5,7 @@ const Movies = ({ movie, title, id }) => {
       <div className="movie-details">
     <Link to={`details/${id}/movie`} style={{textDecoration: 'none', color: 'none'}}>
         <img
-          src={`https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`}
+          src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`}
           alt=""
           
           className="movie-img"

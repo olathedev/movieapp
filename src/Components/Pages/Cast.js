@@ -1,6 +1,8 @@
 import {useState , useEffect } from 'react'
+import React from "react";
+import Slider from "react-slick";
 
-const Cast = ({ id,type }) => {
+const Cast = ({ id,type, settings }) => {
 
     const [casts, setCasts] = useState([])
 
@@ -15,18 +17,18 @@ const Cast = ({ id,type }) => {
         })
     }, [id]);
 
-    
 
     return ( 
         <>
-          
+          <Slider {...settings}>
             {casts.map((cast) => (
-                <div className="col-6 col-md-2 py-3" key={cast.id}>
+                <div className="" key={cast.id}>
                     <img src={`https://www.themoviedb.org/t/p/w138_and_h175_face${cast.profile_path}`} style={{borderRadius: '7px'}}  alt="" />
-                    <p>{cast.original_name}</p> as <p>{cast.character}</p>
+                    <p>{cast.original_name} as {cast.character}</p>
                 </div>
             ))
             }
+            </Slider>
         </>
      );
 }
