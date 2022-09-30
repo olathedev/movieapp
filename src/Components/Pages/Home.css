@@ -1,0 +1,19 @@
+.header {
+        
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Assets/images/header_img2.jpg');
+    background-size: center;
+    background-position: center;
+
+
+}
+
+.movie-details .movie-img {
+    border-radius: 15px;
+
+}
+
+.movie-details .movie-img:hover {
+    height: 300px;
+    filter: brightness(50%);
+    
+}
