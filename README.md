@@ -1,2 +1,2 @@
 ######Deployed
-check deployed app here  [deployed app](movieappmike.vercel.app)
+check deployed app here  movieappmike.vercel.app
